@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conference and Seminar Registration</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f3f6fb;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(120deg, #141e60, #2878d0);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #10183d;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        section {
+            padding: 30px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #173b78;
+            margin-bottom: 25px;
+        }
+
+        .themes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .theme-card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            width: 30%;
+            min-width: 220px;
+            text-align: center;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .speakers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .speaker-card {
+            background: white;
+            width: 30%;
+            min-width: 220px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .speaker-card img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 14px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2458a6;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eaf1fc;
+        }
+
+        .venue {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .registration {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #2458a6;
+            color: white;
+            padding: 13px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #142e63;
+        }
+
+        .guidelines {
+            background: #e3edff;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #10183d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .theme-card, .speaker-card {
+                width: 100%;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TECHNOVATE 2026</h1>
+        <p>National Conference and Seminar on Technology</p>
+        <p>📅 December 15, 2026 | 📍 Vijayawada, Andhra Pradesh</p>
+    </header>
+
+    <nav>
+        <a href="#themes">Themes</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#venue">Venue</a>
+        <a href="#register">Register</a>
+    </nav>
+
+    <section id="themes">
+        <h2>Conference Themes</h2>
+
+        <div class="themes">
+            <div class="theme-card">
+                <h3>Artificial Intelligence</h3>
+                <p>Explore AI, machine learning and smart technologies.</p>
+            </div>
+
+            <div class="theme-card">
+                <h3>Web Development</h3>
+                <p>Learn about modern websites and web applications.</p>
+            </div>
+
+            <div class="theme-card">
+                <h3>Cyber Security</h3>
+                <p>Discover data protection and online security.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <h2>Keynote Speakers</h2>
+
+        <div class="speakers">
+            <div class="speaker-card">
+                <img src="https://placehold.co/150x150/2458a6/ffffff?text=Speaker+1"
+                     alt="Speaker 1">
+                <h3>Dr. Anil Kumar</h3>
+                <p>AI Research Specialist</p>
+            </div>
+
+            <div class="speaker-card">
+                <img src="https://placehold.co/150x150/2878d0/ffffff?text=Speaker+2"
+                     alt="Speaker 2">
+                <h3>Ms. Priya Sharma</h3>
+                <p>Web Technology Expert</p>
+            </div>
+
+            <div class="speaker-card">
+                <img src="https://placehold.co/150x150/173b78/ffffff?text=Speaker+3"
+                     alt="Speaker 3">
+                <h3>Mr. Rahul Verma</h3>
+                <p>Cyber Security Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2>Conference Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Session</th>
+                <th>Speaker</th>
+            </tr>
+
+            <tr>
+                <td>9:00 AM</td>
+                <td>Registration and Welcome</td>
+                <td>Organizing Team</td>
+            </tr>
+
+            <tr>
+                <td>10:00 AM</td>
+                <td>Artificial Intelligence</td>
+                <td>Dr. Anil Kumar</td>
+            </tr>
+
+            <tr>
+                <td>11:30 AM</td>
+                <td>Modern Web Development</td>
+                <td>Ms. Priya Sharma</td>
+            </tr>
+
+            <tr>
+                <td>1:00 PM</td>
+                <td>Lunch Break</td>
+                <td>All Participants</td>
+            </tr>
+
+            <tr>
+                <td>2:00 PM</td>
+                <td>Cyber Security</td>
+                <td>Mr. Rahul Verma</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="venue">
+        <h2>Venue Information</h2>
+
+        <div class="venue">
+            <h3>ABC Engineering College</h3>
+            <p>Vijayawada, Andhra Pradesh, India</p>
+            <p>Date: December 15, 2026</p>
+            <p>Time: 9:00 AM to 4:00 PM</p>
+            <p>Contact: conference@example.com</p>
+        </div>
+    </section>
+
+    <section id="register">
+        <h2>Participant Registration</h2>
+
+        <form class="registration" action="#" method="get">
+            <label for="name">Full Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <label for="college">College Name</label>
+            <input type="text" id="college"
+                   placeholder="Enter your college" required>
+
+            <label for="theme">Select Theme</label>
+            <select id="theme" required>
+                <option value="">Choose a theme</option>
+                <option>Artificial Intelligence</option>
+                <option>Web Development</option>
+                <option>Cyber Security</option>
+            </select>
+
+            <label for="message">Comments</label>
+            <textarea id="message" rows="4"
+                      placeholder="Enter your comments"></textarea>
+
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Participation Guidelines</h2>
+
+        <div class="guidelines">
+            <ul>
+                <li>Complete registration before attending.</li>
+                <li>Carry your college ID card.</li>
+                <li>Arrive at the venue on time.</li>
+                <li>Maintain discipline during all sessions.</li>
+                <li>Participate actively in discussions.</li>
+                <li>Follow the instructions of the organizers.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TECHNOVATE Conference. All Rights Reserved.</p>
+        <p>Learn | Innovate | Connect</p>
+    </footer>
+
+</body>
+</html>
