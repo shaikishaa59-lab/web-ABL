@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Fitness Center</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #080808;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d9ff00;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9ff00;
+        }
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+                linear-gradient(90deg, #000000ee, #00000055),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.1;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #d9ff00;
+        }
+
+        .hero p {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d9ff00;
+            color: #111;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: #d9ff00;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1d1d1d;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #d9ff00;
+            box-shadow: 0 8px 25px #d9ff0020;
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card h3 {
+            color: #d9ff00;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cccccc;
+        }
+
+        .facilities {
+            background: #191919;
+        }
+
+        .facility-box {
+            background: #252525;
+            padding: 25px;
+            border-left: 4px solid #d9ff00;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .facility-box:hover {
+            background: #303030;
+            transform: translateX(5px);
+        }
+
+        .facility-box h3 {
+            color: #d9ff00;
+            margin-bottom: 8px;
+        }
+
+        .pricing {
+            text-align: center;
+        }
+
+        .price-card {
+            background: #202020;
+            padding: 30px 20px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .price-card.featured {
+            border: 2px solid #d9ff00;
+            transform: scale(1.03);
+        }
+
+        .price-card:hover {
+            border-color: #d9ff00;
+            transform: translateY(-7px);
+        }
+
+        .price {
+            color: #d9ff00;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .price-card li {
+            padding: 7px;
+            border-bottom: 1px solid #383838;
+        }
+
+        .schedule {
+            background: #191919;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #222;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        th {
+            background: #d9ff00;
+            color: #111;
+        }
+
+        tr:hover td {
+            background: #303030;
+        }
+
+        .register {
+            background:
+                linear-gradient(#000000d9, #000000d9),
+                url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1400&q=80")
+                center/cover;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            background: #292929;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            outline: 2px solid #d9ff00;
+        }
+
+        form .btn {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            color: #aaa;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 4px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .hero {
+                min-height: 450px;
+                padding: 45px 6%;
+            }
+
+            .price-card.featured {
+                transform: none;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">POWER<span>FIT</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#programs">Programs</a>
+            <a href="#trainers">Trainers</a>
+            <a href="#pricing">Membership</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#register">Join Us</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>BUILD YOUR<br><span>STRONGER</span> SELF</h1>
+            <p>
+                Train hard. Stay healthy. Feel stronger.
+                Start your fitness journey with PowerFit Fitness Center.
+            </p>
+            <a href="#register" class="btn">JOIN OUR GYM</a>
+        </div>
+    </section>
+
+    <section id="programs">
+        <h2 class="section-title">Our <span>Workout Programs</span></h2>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80" alt="Strength training">
+                <div class="card-content">
+                    <h3>Strength Training</h3>
+                    <p>Build strength with guided resistance exercises and proper technique.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80" alt="Cardio workout">
+                <div class="card-content">
+                    <h3>Cardio Fitness</h3>
+                    <p>Improve endurance with treadmill, cycling, and cardio sessions.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80" alt="Yoga exercise">
+                <div class="card-content">
+                    <h3>Yoga & Flexibility</h3>
+                    <p>Practice balance, mobility, breathing, and relaxation techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trainers" class="facilities">
+        <h2 class="section-title">Meet Our <span>Trainers</span></h2>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80" alt="Personal fitness trainer">
+                <div class="card-content">
+                    <h3>Rahul Kumar</h3>
+                    <p>Strength & Conditioning Coach</p>
+                    <p>Experience: 5 years</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=700&q=80" alt="Fitness coach">
+                <div class="card-content">
+                    <h3>Priya Sharma</h3>
+                    <p>Yoga & Wellness Coach</p>
+                    <p>Experience: 4 years</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Gym training coach">
+                <div class="card-content">
+                    <h3>Arjun Reddy</h3>
+                    <p>Personal Fitness Trainer</p>
+                    <p>Experience: 6 years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities">
+        <h2 class="section-title">Fitness <span>Facilities</span></h2>
+
+        <div class="cards">
+            <div class="facility-box">
+                <h3>🏋 Weight Training</h3>
+                <p>Dumbbells, barbells, and resistance machines.</p>
+            </div>
+
+            <div class="facility-box">
+                <h3>🏃 Cardio Zone</h3>
+                <p>Treadmills, exercise bikes, and cardio equipment.</p>
+            </div>
+
+            <div class="facility-box">
+                <h3>🧘 Yoga Studio</h3>
+                <p>A peaceful space for stretching and yoga sessions.</p>
+            </div>
+
+            <div class="facility-box">
+                <h3>🚿 Changing Rooms</h3>
+                <p>Convenient changing areas and lockers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Membership <span>Plans</span></h2>
+
+        <div class="cards">
+            <div class="price-card">
+                <h3>Basic</h3>
+                <div class="price">₹999</div>
+                <p>Per Month</p>
+                <ul>
+                    <li>Gym Access</li>
+                    <li>Cardio Equipment</li>
+                    <li>Locker Facility</li>
+                    <li>Flexible Timings</li>
+                </ul>
+                <a href="#register" class="btn">Choose Plan</a>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Standard</h3>
+                <div class="price">₹1,999</div>
+                <p>Per Month</p>
+                <ul>
+                    <li>All Basic Benefits</li>
+                    <li>Group Fitness Classes</li>
+                    <li>Trainer Guidance</li>
+                    <li>Fitness Assessment</li>
+                </ul>
+                <a href="#register" class="btn">Choose Plan</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Premium</h3>
+                <div class="price">₹2,999</div>
+                <p>Per Month</p>
+                <ul>
+                    <li>All Standard Benefits</li>
+                    <li>Personal Training</li>
+                    <li>Yoga Sessions</li>
+                    <li>Personalized Guidance</li>
+                </ul>
+                <a href="#register" class="btn">Choose Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule">
+        <h2 class="section-title">Weekly Class <span>Schedule</span></h2>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>6:00 AM</th>
+                    <th>8:00 AM</th>
+                    <th>5:00 PM</th>
+                    <th>7:00 PM</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Cardio</td>
+                    <td>Yoga</td>
+                    <td>Strength</td>
+                    <td>HIIT</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>Yoga</td>
+                    <td>Cardio</td>
+                    <td>HIIT</td>
+                    <td>Strength</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Strength</td>
+                    <td>Yoga</td>
+                    <td>Cardio</td>
+                    <td>HIIT</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Cardio</td>
+                    <td>Strength</td>
+                    <td>Yoga</td>
+                    <td>HIIT</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Yoga</td>
+                    <td>Cardio</td>
+                    <td>Strength</td>
+                    <td>Group Fitness</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>HIIT</td>
+                    <td>Yoga</td>
+                    <td>Cardio</td>
+                    <td>Open Gym</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="register" class="register">
+        <h2 class="section-title">Join <span>PowerFit Today</span></h2>
+
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Full Name" required>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <select name="plan" required>
+                <option value="">Select Membership Plan</option>
+                <option>Basic - ₹999/month</option>
+                <option>Standard - ₹1,999/month</option>
+                <option>Premium - ₹2,999/month</option>
+            </select>
+
+            <select name="program" required>
+                <option value="">Choose Workout Program</option>
+                <option>Strength Training</option>
+                <option>Cardio Fitness</option>
+                <option>Yoga & Flexibility</option>
+            </select>
+
+            <textarea name="message" rows="4"
+                placeholder="Your fitness goals (optional)"></textarea>
+
+            <button type="submit" class="btn">REGISTER NOW</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 PowerFit Fitness Center | Train Hard. Live Strong.</p>
+        <p>Contact: powerfit@example.com | Phone: 98765 43210</p>
+    </footer>
+
+</body>
+</html>
