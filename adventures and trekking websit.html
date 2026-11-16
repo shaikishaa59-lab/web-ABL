@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adventure and Trekking Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            color: #18352c;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #123b32;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #205849;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 350px;
+            background:
+                linear-gradient(rgba(0,0,0,0.4),
+                rgba(0,0,0,0.5)),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80");
+            background-size: cover;
+            background-position: center;
+            color:gray;
+            text-align: center;
+            padding: 85px 15px;
+        }
+
+         h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+         p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff8c24;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 35px 7%;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 22px;
+            color: #205849;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #0002;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card h3 {
+            color: #205849;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0f3e9;
+            color: #205849;
+            padding: 4px 10px;
+            border-radius: 15px;
+            margin-top: 8px;
+        }
+
+        .schedule {
+            background: #e5f1eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 13px;
+            border: 1px solid #cbdcd2;
+            text-align: center;
+        }
+
+        th {
+            background: #205849;
+            color: white;
+        }
+
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 260px;
+            padding: 25px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 3px 10px #0001;
+        }
+
+        .equipment {
+            border-top: 5px solid #21966c;
+        }
+
+        .safety {
+            border-top: 5px solid #ff8c24;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        .price {
+            font-size: 25px;
+            color: #e87516;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .package-btn {
+            display: block;
+            background: #205849;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #123b32;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding-top: 90px;
+            }
+
+            section {
+                padding: 25px 5%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 7px 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🏔 Adventure Trails</h1>
+        <p>Explore Nature • Trek • Camp • Discover</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#routes">Trekking Routes</a>
+        <a href="#camping">Camping</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#packages">Packages</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <h2>Trek • Camp • Explore</h2>
+        <p>Discover beautiful mountains and create unforgettable memories.</p>
+        <a href="#routes" class="btn">Explore Our Trips</a>
+    </div>
+
+    <section id="routes">
+        <h2> Popular Trekking Routes</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80" alt="Mountain trekking">
+                <div class="card-content">
+                    <h3>Kedarkantha Trek</h3>
+                    <p>Beautiful mountain views and snowy trails.</p>
+                    <span class="tag">Easy</span>
+                    <p>Duration: 5 Days</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&q=80" alt="Green nature trail">
+                <div class="card-content">
+                    <h3>Valley Trek</h3>
+                    <p>Explore green valleys, flowers and forests.</p>
+                    <span class="tag">Moderate</span>
+                    <p>Duration: 6 Days</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=500&q=80" alt="High mountain landscape">
+                <div class="card-content">
+                    <h3>Hampta Pass Trek</h3>
+                    <p>Experience exciting high mountain trails.</p>
+                    <span class="tag">Moderate</span>
+                    <p>Duration: 7 Days</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="camping" class="schedule">
+        <h2> Camping Trips</h2>
+
+        <div class="cards">
+            <div class="card-content">
+                <h3> Forest Camping</h3>
+                <p>Enjoy fresh air and green forests.</p>
+            </div>
+
+            <div class="card-content">
+                <h3> Bonfire Nights</h3>
+                <p>Enjoy stories and music with friends.</p>
+            </div>
+
+            <div class="card-content">
+                <h3> Riverside Camping</h3>
+                <p>Relax beside beautiful natural scenery.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2> Trip Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Trip Name</th>
+                <th>Duration</th>
+                <th>Difficulty</th>
+            </tr>
+            <tr>
+                <td>10 November</td>
+                <td>Kedarkantha Trek</td>
+                <td>5 Days</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>18 November</td>
+                <td>Valley Trek</td>
+                <td>6 Days</td>
+                <td>Moderate</td>
+            </tr>
+            <tr>
+                <td>25 November</td>
+                <td>Hampta Pass Trek</td>
+                <td>7 Days</td>
+                <td>Moderate</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="equipment">
+        <h2> Equipment and Safety</h2>
+
+        <div class="info">
+
+            <div class="info-box equipment">
+                <h3>Equipment Checklist</h3>
+                <ul>
+                    <li>Trekking shoes</li>
+                    <li>Backpack</li>
+                    <li>Water bottle</li>
+                    <li>Warm clothes and raincoat</li>
+                    <li>Flashlight</li>
+                    <li>First aid kit</li>
+                    <li>Snacks and sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="info-box safety">
+                <h3>Safety Guidelines</h3>
+                <ul>
+                    <li>Follow your guide's instructions.</li>
+                    <li>Stay on marked trails.</li>
+                    <li>Drink enough water.</li>
+                    <li>Never trek alone.</li>
+                    <li>Check weather conditions.</li>
+                    <li>Keep the environment clean.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="packages">
+        <h2> Trekking Packages</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Basic Package</h3>
+                    <p class="price">₹6,999</p>
+                    <p> Guide assistance</p>
+                    <p> Camping tent</p>
+                    <p> Basic meals</p>
+                    <a href="#home" class="package-btn">Choose Package</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Standard Package</h3>
+                    <p class="price">₹9,999</p>
+                    <p> Everything in Basic</p>
+                    <p> Camping equipment</p>
+                    <p> All meals</p>
+                    <a href="#home" class="package-btn">Choose Package</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Premium Package</h3>
+                    <p class="price">₹12,999</p>
+                    <p> Premium camping</p>
+                    <p>✓ Expert guide</p>
+                    <p>✓ Meals and transfers</p>
+                    <a href="#home" class="package-btn">Choose Package</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h3>🏔 Adventure Trails</h3>
+        <p>Explore • Trek • Discover</p>
+        <p>© 2026 Adventure Trails. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
